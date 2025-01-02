@@ -16,14 +16,14 @@ public class Explorador {
     public static final int Izquierda = 4;
 
     // Límites mapa de 100 filas y 100 columnas
-    private static final int LIMITE_SUPERIOR = 0;
-    private static final int LIMITE_INFERIOR = 100;
-    private static final int LIMITE_DERECHA = 100;
-    private static final int LIMITE_IZQUIERDA = 0;
+    private static final int Limite_Arriba = 100;
+    private static final int Limite_Abajo = 0;
+    private static final int Limite_Derecha = 100;
+    private static final int Limite_Izquierda = 0;
 
     //filaAleatoria entre 0 y 100
     Random random = new Random();
-    int filaAleatoria = random.nextInt(100);
+    int filaAleatoria = random.nextInt(101);
 
     //Constructor
     public Explorador(String nombre) {
@@ -43,6 +43,26 @@ public class Explorador {
 
     public void setPosicionActual(Posicion posicionActual) {
         this.posicionActual = posicionActual;
+    }
+
+    //Métodos
+
+    public void moverse(int direccion) {
+        int filaNueva = posicionActual.getCoordenadaFila();
+        int columnaNueva = posicionActual.getCoordenadaCol();
+
+        if (direccion == Arriba && filaNueva < Limite_Arriba) {
+            filaNueva++;
+        } else if (direccion == Abajo && filaNueva > Limite_Abajo) {
+            filaNueva--;
+        } else if (direccion == Derecha && columnaNueva < Limite_Derecha) {
+            columnaNueva++;
+        } else if (direccion == Izquierda && columnaNueva > Limite_Izquierda) {
+            columnaNueva--;
+        } else {
+            System.out.println("Dirección Incorrecta");
+        }
+
     }
 
 }
