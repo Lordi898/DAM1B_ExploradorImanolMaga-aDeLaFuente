@@ -23,12 +23,13 @@ public class Explorador {
 
     //filaAleatoria entre 0 y 100
     Random random = new Random();
-    int filaAleatoria = random.nextInt(7);
+    int filaAleatoria = random.nextInt(6);
 
     //Constructor
     public Explorador(String nombre) {
         this.nombre = nombre;
 
+        //Posicion inicial jugador
         this.posicionActual = new Posicion(filaAleatoria, 0);
     }
 
