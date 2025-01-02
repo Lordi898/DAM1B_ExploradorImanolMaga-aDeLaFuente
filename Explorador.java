@@ -16,14 +16,14 @@ public class Explorador {
     public static final int Izquierda = 4;
 
     // Límites mapa de 100 filas y 100 columnas
-    private static final int Limite_Arriba = 100;
+    private static final int Limite_Arriba = 6;
     private static final int Limite_Abajo = 0;
-    private static final int Limite_Derecha = 100;
+    private static final int Limite_Derecha = 20;
     private static final int Limite_Izquierda = 0;
 
     //filaAleatoria entre 0 y 100
     Random random = new Random();
-    int filaAleatoria = random.nextInt(101);
+    int filaAleatoria = random.nextInt(7);
 
     //Constructor
     public Explorador(String nombre) {
@@ -47,10 +47,14 @@ public class Explorador {
 
     //Métodos
 
+    //Metodo moverse
     public void moverse(int direccion) {
+
+        //Variables para ayudar con el desplazamiento y los limites del mapa
         int filaNueva = posicionActual.getCoordenadaFila();
         int columnaNueva = posicionActual.getCoordenadaCol();
 
+        //Desplazamiento en uno en la direccion indicada siempre que no supere los limites del mapa
         if (direccion == Arriba && filaNueva < Limite_Arriba) {
             filaNueva++;
         } else if (direccion == Abajo && filaNueva > Limite_Abajo) {
