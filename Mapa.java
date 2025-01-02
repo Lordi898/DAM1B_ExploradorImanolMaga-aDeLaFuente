@@ -10,9 +10,16 @@ public class Mapa {
     //fila random inicio Jugador
     int filaJugador = random.nextInt(6);
 
+    //fila y columna random para el tesoro
+    int filaTesoro = random.nextInt(6);
+    int columnaTesoro = random.nextInt(20);
+
     //Atributos
     private char[][] tablero;
     private Posicion posJugador;
+    private Posicion posTesoro;
+    private Posicion[] listadoEnemigos;
+    private Posicion[] posicionTrampas;
 
     //Constructor
     public Mapa() {
@@ -29,7 +36,10 @@ public class Mapa {
         posJugador = new Posicion(filaJugador, 0);
         tablero[filaJugador][0] = 'J';
 
-        //generar posicion del tesoro
+        //generar posicion del tesoro sin mostrarlo en el tablero
+        posTesoro = new Posicion(filaTesoro, columnaTesoro);
+
+        //generar posicion de enemigos
 
 
     }
