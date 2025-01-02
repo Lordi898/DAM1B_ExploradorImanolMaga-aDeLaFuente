@@ -19,4 +19,18 @@ public class Explorador {
 
         this.posicionActual = new Posicion(filaAleatoria, 0);
     }
+
+    // Getters y setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Posicion getPosicionActual() {
+        return posicionActual;
+    }
+
+    public void setPosicionActual(Posicion posicionActual) {
+        this.posicionActual = posicionActual;
+    }
+
 }
