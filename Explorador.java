@@ -9,6 +9,18 @@ public class Explorador {
     String nombre;
     Posicion posicionActual;
 
+    //Constantes Direcciones
+    public static final int Arriba = 1;
+    public static final int Abajo = 2;
+    public static final int Derecha = 3;
+    public static final int Izquierda = 4;
+
+    // Límites mapa de 100 filas y 100 columnas
+    private static final int LIMITE_SUPERIOR = 0;
+    private static final int LIMITE_INFERIOR = 100;
+    private static final int LIMITE_DERECHA = 100;
+    private static final int LIMITE_IZQUIERDA = 0;
+
     //filaAleatoria entre 0 y 100
     Random random = new Random();
     int filaAleatoria = random.nextInt(100);
