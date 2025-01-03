@@ -72,11 +72,29 @@ public class Mapa {
                 filaTrampa = random.nextInt(6);
                 colTrampa = random.nextInt(20);
             }
-            while (tablero[filaTrampa][colTrampa] != ' '); // Asegurarse de que no se sobreescriban posiciones
+            while (tablero[filaTrampa][colTrampa] != ' ');
             posicionTrampas[i] = new Posicion(filaTrampa, colTrampa);
             tablero[filaTrampa][colTrampa] = 'T';
         }
+    }
 
+    //Metodos
+
+    public char[][] getTablero() {
+        return tablero;
+    }
+
+    public Posicion getPosTesoro() {
+        return posTesoro;
+    }
+
+    // Mostrar el tablero
+    public void mostrar() {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 20; j++) {
+                System.out.print(tablero[i][j] + " ");
+            }
+        }
     }
 
 }
