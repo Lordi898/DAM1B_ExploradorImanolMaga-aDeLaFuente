@@ -18,9 +18,9 @@ public class Enemigo {
     public static final int Izquierda = 4;
 
     // Límites mapa de 6 filas y 20 columnas
-    private static final int Limite_Arriba = 6;
+    private static final int Limite_Arriba = 5;
     private static final int Limite_Abajo = 0;
-    private static final int Limite_Derecha = 20;
+    private static final int Limite_Derecha = 19;
     private static final int Limite_Izquierda = 0;
 
     //Constructor
@@ -68,8 +68,6 @@ public class Enemigo {
             //Actualizar la posición del enemigo
             posicionActual.setCoordenadaFila(filaNueva);
             posicionActual.setCoordenadaCol(columnaNueva);
-        } else {
-            System.out.println("Movimiento del enemigo invalido");
         }
 
     }

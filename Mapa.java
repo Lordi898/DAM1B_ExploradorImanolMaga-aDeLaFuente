@@ -90,11 +90,20 @@ public class Mapa {
 
     // Mostrar el tablero
     public void mostrar() {
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 20; j++) {
-                System.out.print(tablero[i][j] + " ");
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                System.out.print("-----");
             }
+            System.out.println();
+            for (int j = 0; j < tablero[i].length; j++) {
+                System.out.print("|  " + tablero[i][j] + " ");
+            }
+            System.out.println("|");
         }
+        for (int j = 0; j < tablero[0].length; j++) {
+            System.out.print("-----");
+        }
+        System.out.println();
     }
 
 }
