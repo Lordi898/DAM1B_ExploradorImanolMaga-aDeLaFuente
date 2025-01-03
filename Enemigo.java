@@ -24,7 +24,7 @@ public class Enemigo {
     private static final int Limite_Izquierda = 0;
 
     //Constructor
-    public Enemigo(Posicion Posicion) {
+    public Enemigo(String nombreExplorador) {
         this.posicionActual = new Posicion(filaAleatoria, 0);
     }
 
