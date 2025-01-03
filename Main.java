@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Bienvenido al Juego del explorador ");
         System.out.println(" *******************************************************");
 
-        //Creo el Mapa
+        //Muestra el mapa "Version incompleta"
         Mapa mapa = new Mapa();
 
         //Creo el Explorador
@@ -63,7 +63,26 @@ public class Main {
                 direccion = Explorador.Derecha;
             } else if (accion == 'A') {
                 direccion = Explorador.Izquierda;
+            } else {
+                System.out.println("Tecla invalida, introduzca A, W, S, D");
+                direccion = 0;
             }
+
+            //Mover el explorador
+            explorador.moverse(direccion);
+            Posicion nuevaPosJugador = explorador.getPosicionActual();
+
+            //Actualizar el explorador en el tablero
+            mapa.getTablero()[posJugador.getCoordenadaFila()][posJugador.getCoordenadaCol()] = ' ';
+            mapa.getTablero()[nuevaPosJugador.getCoordenadaFila()][nuevaPosJugador.getCoordenadaCol()] = 'J';
+            posJugador = nuevaPosJugador;
+
+            for (Enemigo enemigo : enemigos) {
+                int dirEnemigo = random.nextInt(4) + 1; //Numero aleatorio entre (0 y 3) + 1, es decir entre 1 y 4
+                enemigo.moverse(dirEnemigo, mapa.getTablero());
+            }
+
+
         }
 
     }
