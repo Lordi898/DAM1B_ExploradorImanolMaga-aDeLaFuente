@@ -15,13 +15,13 @@ public class Explorador {
     public static final int Derecha = 3;
     public static final int Izquierda = 4;
 
-    // Límites mapa de 100 filas y 100 columnas
+    // Límites mapa de 6 filas y 20 columnas
     private static final int Limite_Arriba = 6;
     private static final int Limite_Abajo = 0;
     private static final int Limite_Derecha = 20;
     private static final int Limite_Izquierda = 0;
 
-    //filaAleatoria entre 0 y 100
+    //filaAleatoria entre 0 y 6
     Random random = new Random();
     int filaAleatoria = random.nextInt(6);
 
