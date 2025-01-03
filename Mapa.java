@@ -41,6 +41,7 @@ public class Mapa {
 
         //generar posicion de enemigos
         listadoEnemigos = new Posicion[3];
+
         for (int i = 0; i < 3; i++) {
 
             int filaEnemigo;
@@ -58,5 +59,24 @@ public class Mapa {
             tablero[filaEnemigo][colEnemigo] = 'E';
         }
 
+        //generar posicion de trampas
+        posicionTrampas = new Posicion[3];
+
+        //Es el mismo codigo que generar posicion enemigos pero cambiando los nombres
+        for (int i = 0; i < 3; i++) {
+
+            int filaTrampa;
+            int colTrampa;
+
+            do {
+                filaTrampa = random.nextInt(6);
+                colTrampa = random.nextInt(20);
+            }
+            while (tablero[filaTrampa][colTrampa] != ' '); // Asegurarse de que no se sobreescriban posiciones
+            posicionTrampas[i] = new Posicion(filaTrampa, colTrampa);
+            tablero[filaTrampa][colTrampa] = 'T';
+        }
+
     }
+
 }
