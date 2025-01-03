@@ -46,12 +46,24 @@ public class Main {
 
         Random random = new Random();
 
-        while(jugando) {
+        //Pide que accion quieres realizar y la guarda
+        while (jugando) {
             System.out.println("");
             System.out.println("");
             System.out.println("W=Arriba     A=Izquierda     S=Abajo     D=Derecha");
             System.out.print("¿Qué acción quieres realizar? ");
             char accion = scanner.next().toUpperCase().charAt(0);
+
+            int direccion;
+            if (accion == 'W') {
+                direccion = Explorador.Arriba;
+            } else if (accion == 'S') {
+                direccion = Explorador.Abajo;
+            } else if (accion == 'D') {
+                direccion = Explorador.Derecha;
+            } else if (accion == 'A') {
+                direccion = Explorador.Izquierda;
+            }
         }
 
     }
