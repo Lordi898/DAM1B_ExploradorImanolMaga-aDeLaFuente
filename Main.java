@@ -77,15 +77,35 @@ public class Main {
             mapa.getTablero()[nuevaPosJugador.getCoordenadaFila()][nuevaPosJugador.getCoordenadaCol()] = 'J';
             posJugador = nuevaPosJugador;
 
+            //Mueve el enemigo
             for (Enemigo enemigo : enemigos) {
                 int dirEnemigo = random.nextInt(4) + 1; //Numero aleatorio entre (0 y 3) + 1, es decir entre 1 y 4
                 enemigo.moverse(dirEnemigo, mapa.getTablero());
             }
 
-            //Muestra una version actualizada del mapa
+            //Actualiza el mapa
             mapa.mostrar();
 
+            // Verificar si el jugador pierde al ser atrapado por un enemigo
+            for (Enemigo enemigo : enemigos) {
+                if (enemigo.getPosicionActual().getCoordenadaFila() == posJugador.getCoordenadaFila() &&
+                        enemigo.getPosicionActual().getCoordenadaCol() == posJugador.getCoordenadaCol()) {
+                    System.out.println("¡Te han capturado! Fin del juego :( ");
+                    jugando = false;
+                    break;
+                }
+            }
+
+            // Verificar si el jugador encuentra el tesoro
+            Posicion posTesoro = mapa.getPosTesoro();
+            if (posTesoro.getCoordenadaFila() == posJugador.getCoordenadaFila() &&
+                    posTesoro.getCoordenadaCol() == posJugador.getCoordenadaCol()) {
+                System.out.println("¡Felicidades encontrastes el TESORO! ¡Has GANADO! :) ");
+                jugando = false;
+            }
         }
+
+
 
     }
 
