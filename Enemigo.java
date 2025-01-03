@@ -28,6 +28,35 @@ public class Enemigo {
         this.posicionActual = new Posicion(filaAleatoria, 0);
     }
 
+    //Metodos
 
+    public Posicion getPosicionActual() {
+        return posicionActual;
+    }
+
+    public void setPosicionActual(Posicion posicionActual) {
+        this.posicionActual = posicionActual;
+    }
+
+    //Metodo moverse
+    public void moverse(int direccion) {
+
+        //Variables para ayudar con el desplazamiento y los limites del mapa
+        int filaNueva = posicionActual.getCoordenadaFila();
+        int columnaNueva = posicionActual.getCoordenadaCol();
+
+        //Desplazamiento en uno en la direccion indicada siempre que no supere los limites del mapa
+        if (direccion == Arriba && filaNueva < Limite_Arriba) {
+            filaNueva++;
+        } else if (direccion == Abajo && filaNueva > Limite_Abajo) {
+            filaNueva--;
+        } else if (direccion == Derecha && columnaNueva < Limite_Derecha) {
+            columnaNueva++;
+        } else if (direccion == Izquierda && columnaNueva > Limite_Izquierda) {
+            columnaNueva--;
+        } else {
+            System.out.println("Dirección Incorrecta");
+        }
+    }
 
 }
