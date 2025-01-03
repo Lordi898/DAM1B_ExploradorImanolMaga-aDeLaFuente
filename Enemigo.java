@@ -39,7 +39,7 @@ public class Enemigo {
     }
 
     //Metodo moverse
-    public void moverse(int direccion) {
+    public void moverse(int direccion, char[][] tablero) {
 
         //Variables para ayudar con el desplazamiento y los limites del mapa
         int filaNueva = posicionActual.getCoordenadaFila();
@@ -55,8 +55,23 @@ public class Enemigo {
         } else if (direccion == Izquierda && columnaNueva > Limite_Izquierda) {
             columnaNueva--;
         } else {
-            System.out.println("Dirección Incorrecta");
+            System.out.println("Dirección de Enemigo Incorrecta");
         }
+
+        //Comprobar que no haya nada en la nueva posicion del enemigo
+        if (tablero[filaNueva][columnaNueva] == ' ' || tablero[filaNueva][columnaNueva] == 'J') {
+
+            //Actualiza la posicion actual en el tablero y la nueva, es decir hacer que la nueva fila sea 'E' y la anterior vuelva a ser ' '
+            tablero[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()] = ' ';
+            tablero[filaNueva][columnaNueva] = 'E';
+
+            //Actualizar la posición del enemigo
+            posicionActual.setCoordenadaFila(filaNueva);
+            posicionActual.setCoordenadaCol(columnaNueva);
+        } else {
+            System.out.println("Movimiento del enemigo invalido");
+        }
+
     }
 
 }

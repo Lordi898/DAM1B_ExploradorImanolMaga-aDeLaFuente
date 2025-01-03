@@ -65,7 +65,7 @@ public class Explorador {
         } else if (direccion == Izquierda && columnaNueva > Limite_Izquierda) {
             columnaNueva--;
         } else {
-            System.out.println("Dirección Incorrecta");
+            System.out.println("Dirección del Explorador Incorrecta");
         }
 
     }
