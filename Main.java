@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Inicio el Scanner
+        //Inicia el Scanner
         Scanner scanner = new Scanner(System.in);
 
         //Bienvenida
@@ -15,10 +15,10 @@ public class Main {
         System.out.println("Bienvenido al Juego del explorador ");
         System.out.println(" *******************************************************");
 
-        //Muestra el mapa "Version incompleta"
+        //Crea el mapa
         Mapa mapa = new Mapa();
 
-        //Creo el Explorador
+        //Crea el Explorador
         System.out.println("Ingrese el nombre del explorador: ");
         String nombreExplorador = scanner.nextLine();
         Explorador explorador = new Explorador(nombreExplorador);
@@ -30,14 +30,14 @@ public class Main {
         //Creo los enemigos
         Enemigo[] enemigos = new Enemigo[3];
 
-        //Inicio los enemigos en el mapa
+        //Inicia los enemigos en el mapa
         for (int i = 0; i < 3; i++) {
             enemigos[i] = new Enemigo("Enemigo" + (i + 1));
             Posicion posEnemigo = enemigos[i].getPosicionActual();
             mapa.getTablero()[posEnemigo.getCoordenadaFila()][posEnemigo.getCoordenadaCol()] = 'E';
         }
 
-        //Mostrar mapa
+        //Muestra una version incompleta del mapa
         mapa.mostrar();
 
         //Juego
@@ -82,6 +82,8 @@ public class Main {
                 enemigo.moverse(dirEnemigo, mapa.getTablero());
             }
 
+            //Muestra una version actualizada del mapa
+            mapa.mostrar();
 
         }
 
