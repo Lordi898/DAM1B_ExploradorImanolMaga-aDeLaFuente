@@ -1,5 +1,6 @@
 package Clases;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -34,6 +35,23 @@ public class Main {
             enemigos[i] = new Enemigo("Enemigo" + (i + 1));
             Posicion posEnemigo = enemigos[i].getPosicionActual();
             mapa.getTablero()[posEnemigo.getCoordenadaFila()][posEnemigo.getCoordenadaCol()] = 'E';
+        }
+
+        //Mostrar mapa
+        mapa.mostrar();
+
+        //Juego
+
+        boolean jugando = true;
+
+        Random random = new Random();
+
+        while(jugando) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("W=Arriba     A=Izquierda     S=Abajo     D=Derecha");
+            System.out.print("¿Qué acción quieres realizar? ");
+            char accion = scanner.next().toUpperCase().charAt(0);
         }
 
     }
