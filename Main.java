@@ -72,11 +72,6 @@ public class Main {
             explorador.moverse(direccion);
             Posicion nuevaPosJugador = explorador.getPosicionActual();
 
-            //Actualizar el explorador en el tablero
-            mapa.getTablero()[posJugador.getCoordenadaFila()][posJugador.getCoordenadaCol()] = ' ';
-            mapa.getTablero()[nuevaPosJugador.getCoordenadaFila()][nuevaPosJugador.getCoordenadaCol()] = 'J';
-            posJugador = nuevaPosJugador;
-
             //Mueve el enemigo
             for (Enemigo enemigo : enemigos) {
                 int dirEnemigo = random.nextInt(4) + 1; //Numero aleatorio entre (0 y 3) + 1, es decir entre 1 y 4
